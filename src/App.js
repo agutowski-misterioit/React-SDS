@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { AuthProvider, RequireAuthProvider } from './providers/';
 import { MenuComponent } from './components/';
 import { EntryModule, DashboardModule } from './modules';
@@ -11,11 +9,6 @@ import { Button } from "react-bootstrap";
 import { AboutPageModule } from './modules/AboutPageModule';
 
 function App() {
-  const [componentState, setComponentState] = useState(false);
-
-  const componentHandler = () => {
-    setComponentState(!componentState);
-  }
 
   const Layout = () => {
     return(

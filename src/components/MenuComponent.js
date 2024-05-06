@@ -1,5 +1,6 @@
 import { useAuth } from "../providers/auth";
 
+import { Link } from "react-router-dom";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 export const MenuComponent = () => {
@@ -20,16 +21,10 @@ export const MenuComponent = () => {
             >
 
             <NavDropdown title={ auth.getUsername() } id="navbarScrollingDropdown">
-              <NavDropdown.Item href="/about">O programie</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/">Dashboard</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/about">O programie</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={logout}>Wyloguj się</NavDropdown.Item>
-              {/* <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item> */}
             </NavDropdown>
 
           </Nav>

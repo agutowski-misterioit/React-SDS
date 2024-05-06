@@ -14,26 +14,25 @@ export const LoginComponent = ({handler}) => {
   }
 
   const setDefault = () => { 
-    setMail("default@user");
-    setPass("temporary123");
+    setMail(process.env.REACT_APP_DEFAULT_USERNAME);
+    setPass(process.env.REACT_APP_DEFAULT_PASSWORD);
   }
 
   useEffect(() => {
     if(handler.saveMail !== "unsaved"){
       setDefault();
     }
-  },[]);
+  },[handler]);
 
   const tryLogin = (evt) => {
     evt.preventDefault();
-    if( mail === "default@user" && pass === "temporary123"){
+    if( mail === process.env.REACT_APP_DEFAULT_USERNAME && pass === process.env.REACT_APP_DEFAULT_PASSWORD){
       alert("Logowanie się powiodło!");
       handler.setPassCredentials("token");
     }else{
       evt.preventDefault();
-      alert("Dane niepoprawne!!\n\nUżytkownik demonstracyjny:\n\nLogin: default@user\nHasło: temporary123");
-      setMail("default@user");
-      setPass("temporary123");
+      alert("Użytkownik nie istnieje!!\n\nUżytkownik demonstracyjny:\nLogin: default@user\nHasło: temporary123");
+      setDefault();
     }
   }
   
