@@ -13,7 +13,8 @@ export const AuthProvider = ({children}) => {
   }
   
   const logout = () => {
-    removeCookie('token', 'username');
+    removeCookie('token');
+    removeCookie('username');
   }
 
   const getUsername = () => {

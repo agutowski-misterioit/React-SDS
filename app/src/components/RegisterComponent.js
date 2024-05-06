@@ -23,14 +23,14 @@ export const RegisterComponent = ({handler}) => {
     if(email && pass1 === pass2){
       handler.setSaveMail(email);
       alert("Rejestracja przebiegłaby pomyślnie,\nniestety serwis aktualnie nie jest dostępny. \n\nSpróbuj ponownie później");
+      alert("Użytkownik demonstracyjny:\n\nLogin: default@user\nHasło: temporary123")
       handler.setEntryState(0)
     }else{
       setPass1('');
       setPass2('');
-      alert("Rejestracja nie powiodła się, hasła nie zgadzają się ze sobą")
+      alert("Rejestracja nie powiodła się, hasła nie zgadzają się ze sobą\nSpróbuj ponownie!")
     }
 
-    alert("Użytkownik demonstracyjny:\n\nLogin: default@user\nHasło: temporary123")
   }
 
   return(
@@ -47,6 +47,7 @@ export const RegisterComponent = ({handler}) => {
               className='form-control'
               value={ email }
               placeholder='E-mail'
+              autoFocus
               required/>
             <Form.Control
               onChange={ handlePass1 }
