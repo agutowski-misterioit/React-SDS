@@ -12,3 +12,8 @@ Aby uruchomić aplikację należy wykonać polecenie: `npm start`.
 ## Wykonanie aplikacji w trybie produkcyjnym
 Aby wykonać wersję produkcyjną, należy wykonać polecenie: `npm run build`.
 Następnie uruchomić aplikację z katalogu build.
+
+
+### Autor
+Andrzej Gutowski
+Numer albumu: 75686
