@@ -9,7 +9,7 @@ export const AuthProvider = ({children}) => {
   const login = async(token) => {
     const maxAge = 60*60*48;
     setCookie('token', token, { maxAge: maxAge  });
-    setCookie('username', 'Default User', { maxAge: maxAge });
+    setCookie('username', process.env.REACT_APP_DEFAULT_USERNAME, { maxAge: maxAge });
   }
   
   const logout = () => {

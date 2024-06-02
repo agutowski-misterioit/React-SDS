@@ -22,7 +22,7 @@ export const MenuComponent = () => {
 
             <NavDropdown title={ auth.getUsername() } id="navbarScrollingDropdown">
               <NavDropdown.Item as={Link} to="/">Dashboard</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/about">O programie</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/about">O aplikacji</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={logout}>Wyloguj się</NavDropdown.Item>
             </NavDropdown>

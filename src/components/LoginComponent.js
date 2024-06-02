@@ -14,7 +14,7 @@ export const LoginComponent = ({handler}) => {
   }
 
   const setDefault = () => { 
-    setMail(process.env.REACT_APP_DEFAULT_USERNAME);
+    setMail(process.env.REACT_APP_DEFAULT_LOGIN);
     setPass(process.env.REACT_APP_DEFAULT_PASSWORD);
   }
 
@@ -26,7 +26,7 @@ export const LoginComponent = ({handler}) => {
 
   const tryLogin = (evt) => {
     evt.preventDefault();
-    if( mail === process.env.REACT_APP_DEFAULT_USERNAME && pass === process.env.REACT_APP_DEFAULT_PASSWORD){
+    if( mail === process.env.REACT_APP_DEFAULT_LOGIN && pass === process.env.REACT_APP_DEFAULT_PASSWORD){
       alert("Logowanie się powiodło!");
       handler.setPassCredentials("token");
     }else{
@@ -46,14 +46,13 @@ export const LoginComponent = ({handler}) => {
           <Form className='d-flex flex-column gap-2' onSubmit={tryLogin}>
             <Form.Control
               type="email"
-              // className='form-control'
               placeholder='Login'
               onChange={setMailHandler}
               value={mail}
+              autoFocus
               required/>
             <Form.Control
               type="password"
-              // className='form-control'
               placeholder='Hasło'
               onChange={setPassHandler}
               value={pass}
@@ -64,9 +63,13 @@ export const LoginComponent = ({handler}) => {
       </Card>
 
       <div
-        style={{"position": "fixed", "top": 0, "left": 0,"cursor": "pointer", opacity: "0.2"}} 
+        style={{position: "fixed", top: "0.5em", left: "0.5em", cursor: "pointer", opacity: "0.5", border: "solid 1px red", borderRadius: "0.5em", padding: "0.5em", fontSize: "0.7em"}} 
         onClick={setDefault}
         title="Kliknij aby uzupełnić danymi użytkownika demonstracyjnego">
+          <span
+            style={{ position: "absolute", top: "-0.6em", fontSize: "0.5em", backgroundColor: "white", paddingInline: "1em"}}
+          >developer console</span>
+
           Autouzupełnianie
       </div>
 
