@@ -11,9 +11,9 @@ Po sklonowaniu repozytorium należy wykonać komendę: `npm i` w celu pobrania i
 Aby uruchomić aplikację należy wykonać polecenie: `npm start`.
 <br><br>
 
-## Wykonanie aplikacji w trybie produkcyjnym
-Aby wykonać wersję produkcyjną, należy wykonać polecenie: `npm run build`.
-Następnie uruchomić aplikację z katalogu build.
+## <s>Wykonanie aplikacji w trybie produkcyjnym</s>
+<s>Aby wykonać wersję produkcyjną, należy wykonać polecenie: `npm run build`.</s><br/>
+<s>Następnie uruchomić aplikację z katalogu build.</s>
 <br><br><br>
 
 
